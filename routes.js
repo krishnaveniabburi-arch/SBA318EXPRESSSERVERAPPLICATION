@@ -1,6 +1,7 @@
-const express = require("express");
-const router = express.router();
-let { users, posts, comments } = require("../data");
+import express from "express";
+import { users, posts, comments } = require("../data.js");
+const router = express.Router();
+
 
 // GET all posts with query string 
 router.get("/Posts", (req, res) => {
@@ -32,8 +33,8 @@ router.post("/posts", (req, res) => {
 
     }
     const newEntry = {
-        id:posts.length +1,
-        tilte,
+        id: posts.length +1,
+        title,
         content,
         category: category || "general"
     };

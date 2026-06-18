@@ -4,6 +4,11 @@ import { fileURLToPath } from "url";
 import{ requestLogger, apiHeaderSetter,ErrorHandler} from "./middleware.js";
 import apiRouter from  "./routes.js";
 import posts from "./data.js";
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
 const PORT = 3000;
 
@@ -21,7 +26,7 @@ app.use(requestLogger);
 app.use(apiHeaderSetter);
 
 app.get("/", (req, res) => {
-    res.render("dashboard", { currentPosts: posts });
+    res.render("index", { currentPosts: posts });
 });
 
 app.use("/api", apiRouter);

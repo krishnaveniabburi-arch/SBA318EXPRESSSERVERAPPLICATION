@@ -1,6 +1,6 @@
 let users = [
     { id: 1, username: "Dev", role: "admin"},
-    {id: 2, username: "Bob, role: "user};
+    {id: 2, username: "Bob", role: "user"}
 
 ]
 
@@ -16,4 +16,4 @@ let comments = [
 
 ];
 
-module.expors = { users, posts, contents }
+module.exports = { users, posts, comments };
