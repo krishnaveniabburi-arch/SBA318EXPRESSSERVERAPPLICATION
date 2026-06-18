@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 700px;
+    margin: 30px auto;
+    background-color: #fcfcfc;
+
+}
+.data-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 12px 0;
+
+}
+form {
+    background: #f1f1f1;
+
+    border-radius: 6px;
+    padding: 20px;
+    margin-top: 25px 0;
+
+}
+input, textarea {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0 16px 0;
+    box-sizing: border-box;
+}
+button {
+    background-color: #2b8a2b;
+    color: whit;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
