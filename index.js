@@ -1,9 +1,15 @@
 import express  from "express";
-import path from  "path"
+import path from "path";
 import { fileURLToPath } from "url";
 import{ requestLogger, apiHeaderSetter,ErrorHandler} from "./middleware.js";
-import apiRouter from  "./routes.js";
-import posts from "./data.js";
+
+// import routers from subfolders
+import postrouter from "./routes/posts.js";
+import commentsrouter from "./routes/comments.js";
+
+//import data from root folder
+
+import posts from "./data/posts.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -24,12 +30,14 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(requestLogger);
 app.use(apiHeaderSetter);
+app.use("/api/posts", postsRouter);
+app.use("/api/comments", commentsRouter);
 
 app.get("/", (req, res) => {
     res.render("index", { currentPosts: posts });
 });
 
-app.use("/api", apiRouter);
+
 
 // error middeelware
 app.use(ErrorHandler);
