@@ -16,4 +16,4 @@ const ErrorHandler = (err, req, res, next) => {
     res.status(500).json({Error:"server error occured."});
 };
 
-module.exports = { requestLogger, apiHeaderSetter, ErrorHandler};
+export { requestLogger, apiHeaderSetter, ErrorHandler};
