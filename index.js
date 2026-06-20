@@ -8,7 +8,7 @@ import {
   errorHandler
 } from "./middleware.js";
 
-import apiRouter from "./routess/api.js";
+import apiRouter from "./routes/api.js";
 import posts from "./data/posts.js";
 
 const __filename = fileURLToPath(import.meta.url);
