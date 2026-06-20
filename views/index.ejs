@@ -12,19 +12,27 @@
     <p>Displaying state from <code>/api/posts</code> resource tree.</p>
     <% currentPosts.forEach(post => { %>
         <div class ="data-card">
-            <h3><%= post.title %> <small style="color: #666;">(category: <%= post.category %>)</small></h3>
-            <p><%= post.content %></p>
-            </div>
-    <% }) %>
+            <h3><%= post.title %></h3>
+            <p>
+        <%= post.content %>
+    </p>
+
+    <small>
+        Category:
+        <%= post.category %>
+    </small>
+</div>
+<% }); %>
+
 
     <!-- Form interacting directly with the POST endpoint-->
 
     <form action="/api/posts" method ="POST">
         <h2>Submit Application post</h2>
         <label for="title"> Title string</label>
-        <input type="text" id="title" name="title" required>
-        <label for=""category">Grouping category Tag</label>
-        <input type="text" id="category" name="category" placeholder="tech design">
+        <input type="text" name="title" required>
+        <label>category">Grouping category Tag</label>
+        <input type="text" name="category" placeholder="tech design">
         <label for="content">Body text content</label>
         <textarea id="content" name="content" rows="4" required></textarea>
         <button type="submit">Publish to server API</button>

@@ -6,14 +6,14 @@ const requestLogger = (req, res, next) => {
 
 // 
 const apiHeaderSetter = (req, res, next) => {
-    res.setHeader("status", "completed");
+    res.setHeader("X-API-status", "Active");
     next();
 };
 
 // error handling middleware (4 arguments)
 const errorHandler = (err, req, res, next) => {
     console.error("server error details:", err.stack);
-    res.status(500).json({Error:"server error occured."});
+    res.status(500).json({error:"server error occured."});
 };
 
 export { requestLogger, apiHeaderSetter, errorHandler};
