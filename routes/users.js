@@ -20,7 +20,7 @@ router.get("/comments", (req, res) => res.json(comments));
 
 router.get("/posts/:id", (req, res) => {
     const targetPost = posts.find(p => p.id === parseInt(req.params.id));
-    if (!targetPost) return res.status(404).json({eror:"post item not found"});
+    if (!targetPost) return res.status(404).json({error:"post item not found"});
     res.json(targetPost);
 });
 

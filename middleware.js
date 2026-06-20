@@ -11,9 +11,9 @@ const apiHeaderSetter = (req, res, next) => {
 };
 
 // error handling middleware (4 arguments)
-const ErrorHandler = (err, req, res, next) => {
+const errorHandler = (err, req, res, next) => {
     console.error("server error details:", err.stack);
     res.status(500).json({Error:"server error occured."});
 };
 
-export { requestLogger, apiHeaderSetter, ErrorHandler};
+export { requestLogger, apiHeaderSetter, errorHandler};

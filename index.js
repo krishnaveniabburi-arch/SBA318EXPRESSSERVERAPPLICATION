@@ -3,9 +3,10 @@ import path from "path";
 import { fileURLToPath } from "url";
 import{ requestLogger, apiHeaderSetter,ErrorHandler} from "./middleware.js";
 
-// import routers from subfolders
-import postrouter from "./routes/posts.js";
-import commentsrouter from "./routes/comments.js";
+// import data from folders
+import postsRouter from "./routes/posts.js";
+import comments from "./routes/comments.js";
+import users from "./data/users.js";
 
 //import data from root folder
 
@@ -30,8 +31,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(requestLogger);
 app.use(apiHeaderSetter);
-app.use("/api/posts", postsRouter);
-app.use("/api/comments", commentsRouter);
+
+app.use("/api/posts", posts);
+app.use("/api/comments", comments);
+app.use("api/users", users);
 
 app.get("/", (req, res) => {
     res.render("index", { currentPosts: posts });
@@ -40,7 +43,7 @@ app.get("/", (req, res) => {
 
 
 // error middeelware
-app.use(ErrorHandler);
+app.use(errorHandler);
 
 
 app.listen(PORT, () => {

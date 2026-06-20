@@ -3,7 +3,7 @@ import users from "../users.js";
 import posts from "../posts.js"
 import comments from "../comments.js";
 
-const router = express.Router();
+const router = express.router();
 
 // GET all posts (optionally filter by category)
 router.get("/posts", (req, res) => {
