@@ -64,7 +64,7 @@ router.post("/posts", (req, res) => {
 
   posts.push(newPost);
 
-  res.redirect("/");
+  res.status(201).json(newPost);
 });
 
 // PATCH
